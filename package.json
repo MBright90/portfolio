@@ -1,0 +1,19 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "A portfolio to showcase learning",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MBright90/portfolio.git"
+  },
+  "author": "mBright90",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MBright90/portfolio/issues"
+  },
+  "homepage": "https://github.com/MBright90/portfolio#readme"
+}
