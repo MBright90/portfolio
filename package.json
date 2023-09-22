@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/MBright90/portfolio#readme",
   "devDependencies": {
+    "@babel/plugin-transform-runtime": "^7.22.15",
     "css-loader": "^6.8.1",
     "html-webpack-plugin": "^5.5.3",
     "mini-css-extract-plugin": "^2.7.6",
