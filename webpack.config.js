@@ -7,8 +7,14 @@ module.exports = {
   mode: prod ? 'production' : 'development',
   entry: './src/index.tsx',
   output: {
-    path: __dirname + '/dist/',
+    path: path.join(__dirname, '/dist/'),
+    filename: 'main.js'
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: './public/index.html',
+    }),
+  ],
   module: {
     rules: [
       {   
@@ -21,18 +27,30 @@ module.exports = {
             }
         },
       },
+      // {
+      //   test: /\.(ts|tsx)$/,
+      //   exclude: /node_modules/,
+      //   resolve: {
+      //     extensions: ['.ts', '.tsx', '.js', '.json'],
+      //   },
+      //   use: 'ts-loader',
+      // },
       {
-        test: /\.(ts|tsx)$/,
-        exclude: /node_modules/,
-        resolve: {
-          extensions: ['.ts', '.tsx', '.js', '.json'],
-        },
-        use: 'ts-loader',
-      },
+				test: /\.s(a|c)ss?$/,
+				use: [ MiniCssExtractPlugin.loader, 'style-loader', 'css-loader', 'sass-loader' ],
+			},
       {
-        test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader'],
-      },
+				test: /\.(png|jpe?g|svg)$/,
+				use: [
+					{
+					    loader: 'file-loader',
+					    options: {
+							name: '[name].[ext]',
+							outputPath: 'images/'
+						}
+					}
+				]
+			}
     ]
   },
   devtool: prod ? undefined : 'source-map',
@@ -42,4 +60,12 @@ module.exports = {
     }),
     new MiniCssExtractPlugin(),
   ],
-};
+  resolve: {
+    alias: {
+      '@assets': path.resolve(__dirname, 'src/assets'),
+      '@components': path.resolve(__dirname, 'src/components'),
+      '@styles': path.resolve(__dirname, 'src/styles'),
+      
+    }
+  }
+}

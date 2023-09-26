@@ -22,8 +22,14 @@
       "plugins": [{ "name": "typescript-plugin-css-modules" }],
       "baseUrl": ".",
       "paths": {
+        "@assets/*": [
+          "./src/assets/*"
+        ],
         "@components/*": [
           "./src/components/*"
+        ],
+        "@styles/*": [
+          "./src/styles/*"
         ],
       },
       "outDir": "build",
@@ -32,9 +38,9 @@
       "src/**/*.ts",
       "src/**/*.tsx",
       "src/**/*.js",
-    //   "cypress/**/*.ts",
+      "cypress/**/*.ts",
     //   "cypress/plugins/index.js",
-    //   "cypress.config.ts",
+      "cypress.config.ts",
     //   "cypress/plugins/index.js",
       "jest.config.ts"
     ],
