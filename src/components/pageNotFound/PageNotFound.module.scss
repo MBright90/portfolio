@@ -1,0 +1,29 @@
+.pageNotFoundContainer {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+
+.pageNotFoundPara {
+
+}
+
+.flashing {
+    animation: .4s flash infinite
+}
+
+@keyframes flash {
+    0% {
+        opacity: 1;
+    }
+
+    49% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
