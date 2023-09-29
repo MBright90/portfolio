@@ -1,4 +1,6 @@
 import type React from 'react'
+import Footer from '@components/footer/Footer'
+import Header from '@components/header/Header'
 import RouteSwitch from 'src/routes'
 
 import style from './App.module.scss'
@@ -6,9 +8,9 @@ import style from './App.module.scss'
 const App: React.FC = () => {
   return (
     <div className={style.appWrapper}>
-      <header>Put header component in here</header>
+      <Header />
       <RouteSwitch />
-      <footer>Put Footer component here</footer>
+      <Footer />
     </div>
   )
 }
