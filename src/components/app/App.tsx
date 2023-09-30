@@ -1,17 +1,24 @@
 import type React from 'react'
-import Footer from '@components/footer/Footer'
-import Header from '@components/header/Header'
-import RouteSwitch from 'src/routes'
+import { useContext } from 'react'
+import Footer from '@components/footer'
+import Header from '@components/header'
+import ThemeContextProvider, { themeContext } from '@contexts/themeContext'
+import RouteSwitch from '@routes/Routes'
 
+import '@styles/theme.scss'
 import style from './App.module.scss'
 
 const App: React.FC = () => {
+  const { theme } = useContext(themeContext)
+
   return (
-    <div className={style.appWrapper}>
-      <Header />
-      <RouteSwitch />
-      <Footer />
-    </div>
+    <ThemeContextProvider>
+      <div className={`${style.appWrapper} ${theme}`}>
+        <Header />
+        <RouteSwitch />
+        <Footer />
+      </div>
+    </ThemeContextProvider>
   )
 }
 
