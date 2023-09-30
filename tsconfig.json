@@ -28,8 +28,17 @@
         "@components/*": [
           "./src/components/*"
         ],
+        "@contexts/*": [
+          "./src/contexts/*"
+        ],
+        "@routes/*": [
+          "./src/routes"
+        ],
         "@styles/*": [
           "./src/styles/*"
+        ],
+        "@customTypes/*": [
+          "./src/types/*"
         ],
       },
       "outDir": "build",
