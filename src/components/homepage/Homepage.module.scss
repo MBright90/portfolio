@@ -1,0 +1,27 @@
+.linkWrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    height: calc(100vh - 40px);
+    width: 100vw;
+
+    .homepageTitle {
+        grid-area: 2 / 2 / 3 / 3;
+    }
+
+    .linkOne {
+        grid-area: 1 / 1 / 3 / 2;
+    }
+
+    .linkTwo {
+        grid-area:  1 / 2 / 2 / 4;
+    }
+
+    .linkThree {
+        grid-area: 1 / 3 / 3 / 4;
+    }
+
+    .linkFour {
+        grid-area: 2 / 3 / 4 / 4;
+    }
+}
