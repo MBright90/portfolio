@@ -1,5 +1,6 @@
 import type React from 'react'
 import { useContext } from 'react'
+import { BrowserRouter } from 'react-router-dom'
 import ThemeContextProvider, { themeContext } from '@contexts/themeContext'
 import RouteSwitch from '@routes/routes'
 
@@ -11,9 +12,11 @@ const App: React.FC = () => {
 
   return (
     <ThemeContextProvider>
-      <div className={`${style.appWrapper} ${theme}`}>
-        <RouteSwitch />
-      </div>
+      <BrowserRouter>
+        <div className={`${style.appWrapper} ${theme}`}>
+          <RouteSwitch />
+        </div>
+      </BrowserRouter>
     </ThemeContextProvider>
   )
 }
