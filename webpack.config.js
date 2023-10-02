@@ -1,7 +1,8 @@
 const prod = process.env.NODE_ENV === 'production';
+const path = require('path')
 
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const HTMLWebpackPlugin = require('html-webpack-plugin');
+// const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   mode: prod ? 'production' : 'development',
@@ -11,7 +12,7 @@ module.exports = {
     filename: 'main.js'
   },
   plugins: [
-    new HtmlWebpackPlugin({
+    new HTMLWebpackPlugin({
       template: './public/index.html',
     }),
   ],
@@ -27,17 +28,17 @@ module.exports = {
             }
         },
       },
-      // {
-      //   test: /\.(ts|tsx)$/,
-      //   exclude: /node_modules/,
-      //   resolve: {
-      //     extensions: ['.ts', '.tsx', '.js', '.json'],
-      //   },
-      //   use: 'ts-loader',
-      // },
+      {
+        test: /\.(ts|tsx)$/,
+        exclude: /node_modules/,
+        resolve: {
+          extensions: ['.ts', '.tsx', '.js', '.json'],
+        },
+        use: 'ts-loader',
+      },
       {
 				test: /\.s(a|c)ss?$/,
-				use: [ MiniCssExtractPlugin.loader, 'style-loader', 'css-loader', 'sass-loader' ],
+				use: [ 'style-loader', 'css-loader', 'sass-loader' ],
 			},
       {
 				test: /\.(png|jpe?g|svg)$/,
@@ -54,12 +55,6 @@ module.exports = {
     ]
   },
   devtool: prod ? undefined : 'source-map',
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: 'index.html',
-    }),
-    new MiniCssExtractPlugin(),
-  ],
   resolve: {
     alias: {
       '@assets': path.resolve(__dirname, 'src/assets'),

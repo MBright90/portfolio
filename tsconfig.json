@@ -11,7 +11,7 @@
       "esModuleInterop": true,
       "allowSyntheticDefaultImports": true,
       "strict": true,
-      "sourceMap": true, // Added
+      "sourceMap": true,
       "forceConsistentCasingInFileNames": true,
       "noFallthroughCasesInSwitch": true,
       "module": "esnext",
@@ -32,7 +32,7 @@
           "./src/contexts/*"
         ],
         "@routes/*": [
-          "./src/routes"
+          "./src/routes/*"
         ],
         "@styles/*": [
           "./src/styles/*"
@@ -47,10 +47,9 @@
       "src/**/*.ts",
       "src/**/*.tsx",
       "src/**/*.js",
+      "src/*.d.ts",
       "cypress/**/*.ts",
-    //   "cypress/plugins/index.js",
       "cypress.config.ts",
-    //   "cypress/plugins/index.js",
       "jest.config.ts"
     ],
     "exclude": [
