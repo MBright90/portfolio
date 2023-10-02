@@ -1,11 +1,12 @@
 import type React from 'react'
 import { Route, Routes } from 'react-router-dom'
+import Homepage from '@components/homepage/Homepage'
 import PageNotFound from '@components/pageNotFound'
 
 const RouteSwitch: React.FC = () => {
   return (
     <Routes>
-      <Route key={location.pathname} path="/" element={<div>HOME</div>}></Route>
+      <Route key={location.pathname} path="/" element={<Homepage />}></Route>
       <Route path="*" element={<PageNotFound />} />
     </Routes>
   )
