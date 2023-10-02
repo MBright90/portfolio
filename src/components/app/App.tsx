@@ -1,7 +1,7 @@
 import type React from 'react'
 import { useContext } from 'react'
 import ThemeContextProvider, { themeContext } from '@contexts/themeContext'
-import RouteSwitch from '@routes/Routes'
+import RouteSwitch from '@routes/routes'
 
 import '@styles/theme.scss'
 import style from './App.module.scss'
