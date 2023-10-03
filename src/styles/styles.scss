@@ -1,5 +1,8 @@
+@import './fonts';
+
 html,
 body,
+main,
 div,
 span,
 applet,
@@ -24,9 +27,9 @@ header {
   vertical-align: baseline;
 }
 
-// body, input, button, textarea {
-//   font-family: 'helvetica'; // Add font here
-// }
+body, input, button, textarea {
+  font-family: consolamono;
+}
 
 body {
   position: relative;
