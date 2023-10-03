@@ -1,30 +1,33 @@
 import type React from 'react'
 import { Link } from 'react-router-dom'
-import { logo } from '@assets/images/index.js'
 
+import '@styles/theme.scss'
 import style from './Homepage.module.scss'
 
 const Homepage: React.FC = () => {
   return (
     <main>
+      <div className={style.marqueeWrapper}>
+        <div className={`${style.marquee} ${style.marqueeTop}`}></div>
+        <div className={`${style.marquee} ${style.marqueeRight}`}></div>
+        <div className={`${style.marquee} ${style.marqueeBottom}`}></div>
+        <div className={`${style.marquee} ${style.marqueeLeft}`}></div>
+      </div>
       <div className={style.linkWrapper}>
-        <img
-          className={style.homepageTitle}
-          src={logo}
-          alt="I'm Michael Logo"
-          role="presentation"
-        />
-        <Link to="/" className={`${style.homepageLink} ${style.linkOne}`}>
-          Link one
+        <div className={style.homepageTitle} role="image">
+          <p className={style.homepageTitlePara}>I&apos;m Michael</p>
+        </div>
+        <Link to="/" className={`${style.homepageLink} ${style.linkOne} dark`}>
+          PROJECTS
         </Link>
-        <Link to="/" className={`${style.homepageLink} ${style.linkTwo}`}>
-          Link two
+        <Link to="/" className={`${style.homepageLink} ${style.linkTwo} light`}>
+          ABOUT ME
         </Link>
-        <Link to="/" className={`${style.homepageLink} ${style.linkThree}`}>
-          Link three
+        <Link to="/" className={`${style.homepageLink} ${style.linkThree} dark`}>
+          CONTACT
         </Link>
-        <Link to="/" className={`${style.homepageLink} ${style.linkFour}`}>
-          Link four
+        <Link to="/" className={`${style.homepageLink} ${style.linkFour} light`}>
+          SOMETHING ELSE
         </Link>
       </div>
     </main>
