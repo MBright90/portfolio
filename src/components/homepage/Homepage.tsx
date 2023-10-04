@@ -13,19 +13,23 @@ const Homepage: React.FC = () => {
     <ul>
       <li className={style.marqueeText}>Ambitious</li>
       <li aria-hidden="true">
-        <span className={style.marqueeBullet}>*</span>
+        <span className={style.marqueeBullet}>&</span>
       </li>
       <li className={style.marqueeText}>Dedicated</li>
       <li>
-        <span className={style.marqueeBullet}>*</span>
+        <span className={style.marqueeBullet}>&</span>
       </li>
       <li className={style.marqueeText}>Self-taught</li>
       <li>
-        <span className={style.marqueeBullet}>*</span>
+        <span className={style.marqueeBullet}>&</span>
       </li>
       <li className={style.marqueeText}>Inquisitive</li>
       <li>
-        <span className={style.marqueeBullet}>*</span>
+        <span className={style.marqueeBullet}>&</span>
+      </li>
+      <li className={style.marqueeText}>Hardworking</li>
+      <li>
+        <span className={style.marqueeBullet}>&</span>
       </li>
     </ul>
   )

@@ -28,11 +28,11 @@
 
         .homepageTitle {
             grid-area: 2 / 2 / 3 / 3;
-            &:hover {
+            // &:hover {
                 transform: scale(1.5);
                 box-shadow: 10px 10px 10px 10px #000;
                 z-index: 1;
-            }
+            // }
         }
 
         .linkOne {
@@ -169,7 +169,7 @@
         margin: 8px 0;
     }
     li {
-        margin: 0 20px;
+        margin: 0 40px;
     }
 
     .marqueeBullet {
