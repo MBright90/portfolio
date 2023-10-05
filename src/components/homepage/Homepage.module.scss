@@ -29,9 +29,9 @@
         .homepageTitle {
             grid-area: 2 / 2 / 3 / 3;
             // &:hover {
-                transform: scale(1.5);
-                box-shadow: 10px 10px 10px 10px #000;
-                z-index: 1;
+            //     transform: scale(1.5);
+            //     box-shadow: 10px 10px 10px 10px #000;
+            //     z-index: 1;
             // }
         }
 
@@ -97,13 +97,13 @@
         z-index: 1;
     }
 
-    &.light {
+    // &.light {
 
-    }
+    // }
 
-    &.dark {
+    // &.dark {
 
-    }
+    // }
 }
 
 // Marquee Functionality
