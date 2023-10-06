@@ -1,7 +1,9 @@
 import type React from 'react'
-import { type ReactNode, useContext } from 'react'
+import { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { themeContext } from '@contexts/themeContext'
+
+import Marquee from './marquee/Marquee'
 
 import '@styles/theme.scss'
 import style from './Homepage.module.scss'
@@ -9,38 +11,17 @@ import style from './Homepage.module.scss'
 const Homepage: React.FC = () => {
   const { theme } = useContext(themeContext)
 
-  const marqueeTextLi: ReactNode = (
-    <ul>
-      <li className={style.marqueeText}>Ambitious</li>
-      <li aria-hidden="true">
-        <span className={style.marqueeBullet}>&</span>
-      </li>
-      <li className={style.marqueeText}>Dedicated</li>
-      <li>
-        <span className={style.marqueeBullet}>&</span>
-      </li>
-      <li className={style.marqueeText}>Self-taught</li>
-      <li>
-        <span className={style.marqueeBullet}>&</span>
-      </li>
-      <li className={style.marqueeText}>Inquisitive</li>
-      <li>
-        <span className={style.marqueeBullet}>&</span>
-      </li>
-      <li className={style.marqueeText}>Hardworking</li>
-      <li>
-        <span className={style.marqueeBullet}>&</span>
-      </li>
-    </ul>
-  )
+  const itemsOne: string[] = ['Ambitious', 'Dedicated', 'Self-taught', 'Inquisitive']
+
+  const itemsTwo: string[] = ['Typescript', 'React', 'Cypress', 'GitHub']
 
   return (
     <main>
       <div className={style.marqueeWrapper}>
-        <div className={`${style.marquee} ${style.marqueeTop} ${theme}`}>{marqueeTextLi}</div>
-        <div className={`${style.marquee} ${style.marqueeRight} ${theme}`}></div>
-        <div className={`${style.marquee} ${style.marqueeBottom} ${theme}`}></div>
-        <div className={`${style.marquee} ${style.marqueeLeft} ${theme}`}></div>
+        <Marquee position="top" itemArr={itemsOne} />
+        <Marquee position="right" itemArr={itemsTwo} />
+        <Marquee position="bottom" itemArr={itemsOne} />
+        <Marquee position="left" itemArr={itemsTwo} />
       </div>
       <div className={style.linkWrapper}>
         <div className={style.homepageTitle} role="image">
