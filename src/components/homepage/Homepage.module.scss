@@ -28,11 +28,6 @@
 
         .homepageTitle {
             grid-area: 2 / 2 / 3 / 3;
-            // &:hover {
-            //     transform: scale(1.5);
-            //     box-shadow: 10px 10px 10px 10px #000;
-            //     z-index: 1;
-            // }
         }
 
         .linkOne {
@@ -96,14 +91,6 @@
         transform: scaleY(1.1);
         z-index: 1;
     }
-
-    // &.light {
-
-    // }
-
-    // &.dark {
-
-    // }
 }
 
 // Marquee Functionality
