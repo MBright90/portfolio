@@ -11,7 +11,12 @@ import style from './Homepage.module.scss'
 const Homepage: React.FC = () => {
   const { theme } = useContext(themeContext)
 
-  const itemsOne: string[] = ['Ambitious', 'Dedicated', 'Self-taught', 'Inquisitive']
+  const itemsOne: string[] = [
+    'A11y conscientious',
+    'Ambitious and dedicated self-taught front end developer',
+    'Creating intuitive user interfaces',
+    'Inquisitive'
+  ]
 
   const itemsTwo: string[] = ['Typescript', 'React', 'Cypress', 'GitHub']
 
