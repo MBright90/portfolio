@@ -1,0 +1,9 @@
+{
+    "name": "navbar",
+    "version": "1.0.0",
+    "main": "Navbar.tsx",
+    "dependencies": {
+        "react": "^18.2.0",
+        "react-dom": "^6.11.2"
+    }
+}
