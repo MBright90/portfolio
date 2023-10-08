@@ -19,13 +19,6 @@
         margin: 40px;
         width: calc(100vw - 80px);
 
-        .homepageLink {
-            &:hover, &:focus {
-                transform: scale(1.1);
-            }
-        }
-
-
         .homepageTitle {
             grid-area: 2 / 2 / 3 / 3;
         }
@@ -87,9 +80,9 @@
     -moz-transition: transform .3s ease-in-out;
     -o-transition: transform .3s ease-in-out;
     &:hover, &:focus {
-        box-shadow: 10px 10px 10px 10px #000;
-        transform: scaleY(1.1);
-        z-index: 1;
+        font-size: 50px;
+        outline: none;
+        text-shadow: 0 0 3px $brand-yellow, 0 0 5px $brand-yellow;
     }
 }
 
