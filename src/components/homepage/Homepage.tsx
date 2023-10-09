@@ -32,7 +32,7 @@ const Homepage: React.FC = () => {
         <div className={style.homepageTitle} role="image">
           <p className={style.homepageTitlePara}>I&apos;m Michael</p>
         </div>
-        <Link to="/" className={`${style.homepageLink} ${style.linkOne} ${theme}`}>
+        <Link to="/projects" className={`${style.homepageLink} ${style.linkOne} ${theme}`}>
           PROJECTS
         </Link>
         <Link to="/" className={`${style.homepageLink} ${style.linkTwo} ${theme}`}>
