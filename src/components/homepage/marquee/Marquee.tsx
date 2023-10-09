@@ -1,5 +1,4 @@
-import type React from 'react'
-import { useContext } from 'react'
+import React, { useContext } from 'react'
 import { themeContext } from '@contexts/themeContext/ThemeContext'
 
 import style from './Marquee.module.scss'
@@ -13,10 +12,12 @@ const Marquee: React.FC<MarqueeProps> = ({ position, itemArr }) => {
   const { theme } = useContext(themeContext)
 
   const renderedItems = itemArr.map((item, index) => (
-    <>
+    <React.Fragment key={`frag-${index}`}>
       <li key={index}>{item}</li>
-      <li className={style.marqueeBullet}>&</li>
-    </>
+      <li key={`${index}-bullet`} className={style.marqueeBullet}>
+        &
+      </li>
+    </React.Fragment>
   ))
 
   return (
