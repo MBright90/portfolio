@@ -1,7 +1,88 @@
 @import '~@styles/_variables.scss';
+@import '~@styles/_fonts.scss';
 
 .navbar {
+    align-items: center;
+    background-color: $brand-yellow;
+    border: 4px solid #333;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    min-width: 68px;
+    min-height: 68px;
+
+    .navToggle {
+        cursor: pointer;
+        height: 100%;
+        width: 100%;
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            border-right: 4px solid #fff;
+            border-bottom: 4px solid #fff;
+            height: 64px;
+            width: 64px;
+            top: -22px;
+            left: 4px;
+        }
+    }
+
+    @media screen and (min-width: $breakpoint-small) {
+        border-radius: 0;
+        bottom: 0;
+        left: 0;
+        padding: 6px;
+        min-height: 50xp;
+        width: 100vw;
+
+        .navToggle {
+            display: none
+        }
+    }
+}
+
+.navLinkList {
+    display: none;
+
+    @media screen and (min-width: $breakpoint-small) {
+        background-color: #333;
+        display: grid;
+        align-items: stretch;
+        column-gap: 4px;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: 1fr;
+        width: 100vw;
+    }
+}
+
+.navbarLink {
     background-color: $brand-yellow;
     color: #333;
-    width: 100vw
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: something-shine;
+    font-size: 20px;
+    font-weight: bold;
+    height: 80%;
+    padding: 5px;
+    text-align: center;
+
+    &:hover, &:focus {
+        text-decoration: underline;
+        transform: scaleY(1.3);
+        outline: none;
+        text-shadow: 0 0 3px $brand-yellow, 0 0 5px #fff;
+    }
+
+}
+
+@keyframes focus-shake {
+    // Create this animation
 }
