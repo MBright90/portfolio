@@ -13,11 +13,16 @@ const Navbar: React.FC = () => {
 
   return (
     <nav className={style.navbar}>
-      <div className={style.navToggle} role="button" onClick={toggleNavMenu}>
+      <div
+        className={style.navToggle}
+        role="button"
+        onClick={toggleNavMenu}
+        aria-label="Toggle navigation"
+      >
         Tog
       </div>
       <ul className={style.navLinkList}>
-        <Link to="/" className={style.navbarLink}>
+        <Link to="/home" className={style.navbarLink}>
           HOME
         </Link>
         <Link to="/" className={style.navbarLink}>
