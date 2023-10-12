@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import Navbar from '@components/navBar/Navbar'
+import Seenit from '@components/projects/seenit/Seenit'
 import { themeContext } from '@contexts/themeContext/ThemeContext'
 
 import style from './ProjectsPage.module.scss'
@@ -9,10 +10,14 @@ const ProjectsPage: React.FC = () => {
   const [currentProjectIndex, setCurrentProjectIndex] = useState<number>(0)
 
   useEffect(() => {
-    console.log(currentProjectIndex)
+    // console.log(currentProjectIndex)
   }, [currentProjectIndex])
 
-  const projectsArr: number[] = [0, 1, 2, 3, 4]
+  const projectsArr: React.ReactNode[] = [
+    <Seenit key={0} />,
+    <div key={1}>1</div>,
+    <div key={2}>2</div>
+  ]
 
   const changeProject = (indexChange: number): void => {
     let newIndex = currentProjectIndex + indexChange
