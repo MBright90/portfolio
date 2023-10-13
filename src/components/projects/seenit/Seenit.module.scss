@@ -20,20 +20,21 @@
 }
 
 .titleWrapper {
-    background-color: $brand-yellow;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
+    grid-column: span 2;
     position: relative;
 
-    grid-column: span 2;
-
     .projectTitle {
+        align-items: center;
+        background-color: $brand-yellow;
         color: #333;
+        display: flex;
         font-family: something-shine;
         font-size: 64px;
+        height: 100%;
+        justify-content: center;
         letter-spacing: 5px;
+        padding: 20px;
+        position: relative;
     }
 
     @media screen and (min-width: $breakpoint-small) {
@@ -48,6 +49,54 @@
         left: 4px;
         width: 100%;
         height: 100%;
-        z-index: -1;
+    }
+}
+
+.mobileExampleWrapper {
+    background-color: red;
+
+    @media screen and (min-width: $breakpoint-small) {
+        grid-area: 2 / 3 / 6 / 5 ;
+        padding: 20px;
+    }
+}
+
+.desktopExample {
+    background-color: green;
+
+    &.desktopOne {
+        display: none;
+
+        @media screen and (min-width: $breakpoint-small) {
+            display: block;
+            grid-area: 5 / 1 / 7 / 3;
+        }
+    }
+
+    &.desktopTwo {
+        @media screen and (min-width: $breakpoint-small) {
+            grid-area: 1 / 5 / 3 / 7;
+        }
+    }
+}
+
+.projectDetails {
+
+
+    @media screen and (min-width: $breakpoint-small) {
+        &.detailsOne {
+            grid-area: 2 / 1 / 5 / 3;
+        }
+
+        &.detailsTwo {
+            grid-area: 3 / 5 / 6 / 7;
+        }
+    }
+}
+
+.projectLinks {
+
+    @media screen and (min-width: $breakpoint-small) {
+        grid-area: 6 / 3 / 7 / 5;
     }
 }
