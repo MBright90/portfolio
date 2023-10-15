@@ -10,18 +10,14 @@
 
     display: flex;
     flex-direction: column;
-    
-    @media screen and (min-width: $breakpoint-small) {
-        display: grid;
-        grid-gap: 20px;
-        grid-template-columns: repeat(6, 1fr);
-        grid-template-rows: repeat(6, 1fr);
-    }
+    justify-content: center;
 }
 
 .titleWrapper {
-    grid-column: span 2;
-    position: relative;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: max(30%, 250px);
 
     .projectTitle {
         align-items: center;
@@ -37,10 +33,6 @@
         position: relative;
     }
 
-    @media screen and (min-width: $breakpoint-small) {
-
-    }
-
     &::before {
         content: '';
         background-color: #fff;
@@ -52,51 +44,27 @@
     }
 }
 
-.mobileExampleWrapper {
-    background-color: red;
+.exampleWrapper {
+    position: relative;
+    display: flex;
+    gap: 10vw;
+    transform: translateX(10vw);
 
-    @media screen and (min-width: $breakpoint-small) {
-        grid-area: 2 / 3 / 6 / 5 ;
-        padding: 20px;
+    .responsiveExamples {
+        height: auto;
+        width: min(60vw, 800px);
     }
-}
 
-.desktopExample {
-    background-color: green;
+    .loginExamples {
+        display: flex;
+        width: 70wv;
 
-    &.desktopOne {
-        display: none;
-
-        @media screen and (min-width: $breakpoint-small) {
-            display: block;
-            grid-area: 5 / 1 / 7 / 3;
+        .loginDetails {
+            h3 {
+                font-size: 24px;
+                letter-spacing: 4px;
+            }
         }
     }
 
-    &.desktopTwo {
-        @media screen and (min-width: $breakpoint-small) {
-            grid-area: 1 / 5 / 3 / 7;
-        }
-    }
-}
-
-.projectDetails {
-
-
-    @media screen and (min-width: $breakpoint-small) {
-        &.detailsOne {
-            grid-area: 2 / 1 / 5 / 3;
-        }
-
-        &.detailsTwo {
-            grid-area: 3 / 5 / 6 / 7;
-        }
-    }
-}
-
-.projectLinks {
-
-    @media screen and (min-width: $breakpoint-small) {
-        grid-area: 6 / 3 / 7 / 5;
-    }
 }
