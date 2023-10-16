@@ -53,11 +53,13 @@
     .responsiveExamples {
         height: auto;
         width: min(60vw, 800px);
+        flex-shrink: 0;
+        margin: auto 0;
     }
 
     .loginExamples {
         display: flex;
-        width: 70wv;
+        width: 70vw;
 
         .loginDetails {
             h3 {
