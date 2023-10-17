@@ -1,4 +1,7 @@
 import type React from 'react'
+import { mainBg } from '@assets/images'
+import { faGithub } from '@fortawesome/free-brands-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import Marquee from './marquee/Marquee'
 
@@ -22,11 +25,18 @@ const Homepage: React.FC = () => {
         <Marquee position="bottom" itemArr={itemsOne} />
         <Marquee position="left" itemArr={itemsTwo} />
       </div>
-      <div className={style.homepageWrapper}>
-        <div className={style.homepageInfo}>
-          <h1 className={style.homepageTitle}>
-            <span aria-hidden>hi</span>, I&apos;m Michael
-          </h1>
+      <div className={style.homepageWrapper} style={{ backgroundImage: `url("${mainBg}")` }}>
+        <h1 className={style.homepageTitle}>
+          <span className={style.hi} aria-hidden>
+            hi,
+          </span>
+          <span style={{ whiteSpace: 'nowrap' }}> I&apos;m Michael</span>
+        </h1>
+        <p className={style.homepageInfo}>This is all about my dominance</p>
+        <div className={style.externalLinks}>
+          <a href="https://github.com/MBright90">
+            <FontAwesomeIcon icon={faGithub} />
+          </a>
         </div>
       </div>
     </main>

@@ -1,15 +1,81 @@
 @import '~@styles/_variables.scss';
+@import '~@styles/_fonts.scss';
 .homepageWrapper {
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 20px;
+    position: relative;
+    height: calc(100vh - 80px);
+    width: 100vw;
+    margin: 40px 0;
 
     @media screen and (min-width: $breakpoint-small) {
+        justify-content: center;;
+        height: calc(100vh - 80px);
+        width: calc(100vw - 80px);
+        padding: 20px 50px;
         margin: 40px;
+    }
+}
+
+.homepageTitle {
+    font-family: something-shine;
+    font-size: 48px;
+
+    span {
+        letter-spacing: 5px;
+    }
+
+    span.hi {
+        color: $brand-yellow;
+        display: inline-block;
+        font-size: 32px;
+    }
+
+    @media screen and (min-width: $breakpoint-small) {
+        font-size: 70px;
+    }
+}
+
+.homepageInfo {
+    font-size: 24px;
+    margin-top: 20px;
+    padding-top: 25px;
+    width: 100%;
+
+    border-top: 3px solid $brand-yellow;
+
+    @media screen and (min-width: $breakpoint-small) {
+        width: 50%;
+    }
+}
+
+.externalLinks {
+    display: flex;
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    font-size: 50px;
+
+    a {
+        cursor: pointer;
+
+        &:hover {
+            animation: icon-shake infinite .3s ease-in-out;
+        }
+
+        transition: transform .3s ease-in-out;
+        -webkit-transition: transform .3s ease-in-out;
+        -moz-transition: transform .3s ease-in-out;
+        -o-transition: transform .3s ease-in-out;
     }
 }
 
 // Marquee Functionality
 
 .marqueeWrapper {
-    display: none;
     height: 100vh;
     position: absolute;
     overflow: hidden;
@@ -18,5 +84,23 @@
 
     @media screen and (min-width: $breakpoint-small) {
         display: block;
+    }
+}
+
+@keyframes icon-shake {
+    0% {
+        transform: rotate(0deg) scale(1.1);
+    }
+    25% {
+        transform: rotate(20deg) scale(1.1);
+    }
+    50% {
+        transform: rotate(0deg) scale(1.1);
+    }
+    75% {
+        transform: rotate(-20deg) scale(1.1);
+    }
+    100% {
+        transform: rotate(0deg) scale(1.1);
     }
 }
