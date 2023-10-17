@@ -1,16 +1,10 @@
 import type React from 'react'
-import { useContext } from 'react'
-import { Link } from 'react-router-dom'
-import { themeContext } from '@contexts/themeContext'
 
 import Marquee from './marquee/Marquee'
 
-import '@styles/theme.scss'
 import style from './Homepage.module.scss'
 
 const Homepage: React.FC = () => {
-  const { theme } = useContext(themeContext)
-
   const itemsOne: string[] = [
     'A11y conscientious',
     'Ambitious and dedicated self-taught front end developer',
@@ -28,22 +22,12 @@ const Homepage: React.FC = () => {
         <Marquee position="bottom" itemArr={itemsOne} />
         <Marquee position="left" itemArr={itemsTwo} />
       </div>
-      <div className={style.linkWrapper}>
-        <div className={style.homepageTitle} role="image">
-          <p className={style.homepageTitlePara}>I&apos;m Michael</p>
+      <div className={style.homepageWrapper}>
+        <div className={style.homepageInfo}>
+          <h1 className={style.homepageTitle}>
+            <span aria-hidden>hi</span>, I&apos;m Michael
+          </h1>
         </div>
-        <Link to="/projects" className={`${style.homepageLink} ${style.linkOne} ${theme}`}>
-          PROJECTS
-        </Link>
-        <Link to="/" className={`${style.homepageLink} ${style.linkTwo} ${theme}`}>
-          ABOUT ME
-        </Link>
-        <Link to="/" className={`${style.homepageLink} ${style.linkThree} ${theme}`}>
-          CONTACT
-        </Link>
-        <Link to="/" className={`${style.homepageLink} ${style.linkFour} ${theme}`}>
-          SOMETHING ELSE
-        </Link>
       </div>
     </main>
   )
