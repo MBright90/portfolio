@@ -4,7 +4,6 @@ import { BrowserRouter } from 'react-router-dom'
 import ThemeContextProvider, { themeContext } from '@contexts/themeContext'
 import RouteSwitch from '@routes/routes'
 
-import '@styles/theme.scss'
 import style from './App.module.scss'
 
 const App: React.FC = () => {
