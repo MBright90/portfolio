@@ -1,20 +1,16 @@
 @import '~@styles/_fonts.scss';
 
 .marquee {
+    background-color: #333;
+    color: #fff;
     position: absolute;
-    border: 4px solid;
+    border: 4px solid #fff;
+    border-right: none;
+    border-left: none;
     height: 40px;
     overflow: hidden;
     font-weight: bold;
     white-space: nowrap;
-
-    &.light {
-        border-color: #fff;
-    }
-
-    &.dark {
-        border-color: #333;
-    }
 
     ul {
         animation: 10s marqueeScroll infinite linear;
