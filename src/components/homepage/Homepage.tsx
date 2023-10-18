@@ -9,10 +9,10 @@ import style from './Homepage.module.scss'
 
 const Homepage: React.FC = () => {
   const itemsOne: string[] = [
-    'A11y conscientious',
-    'Ambitious and dedicated self-taught front end developer',
-    'Creating intuitive user interfaces',
-    'Inquisitive'
+    'A bit of a dick head',
+    'Ambitious and dedicated guitarist who looks Korean',
+    'Creating unintuitive user interfaces',
+    'In need of knowledge'
   ]
 
   const itemsTwo: string[] = ['Typescript', 'React', 'Cypress', 'GitHub']
@@ -32,7 +32,10 @@ const Homepage: React.FC = () => {
           </span>
           <span style={{ whiteSpace: 'nowrap' }}> I&apos;m Michael</span>
         </h1>
-        <p className={style.homepageInfo}>This is all about my dominance</p>
+        <p className={style.homepageInfo}>
+          This is all about my dominance, where I pretend I am some crazy talented front end
+          developer but really I just sit around listening to guitar music and watching my cat derp.
+        </p>
         <div className={style.externalLinks}>
           <a href="https://github.com/MBright90">
             <FontAwesomeIcon icon={faGithub} />
