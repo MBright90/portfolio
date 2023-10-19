@@ -55,7 +55,12 @@
     }
 }
 
-.externalLinks {
+.internalLinksContainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.externalLinksContainer {
     display: flex;
     position: absolute;
     right: 20px;
