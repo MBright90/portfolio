@@ -1,5 +1,6 @@
 import type React from 'react'
 import { mainBg } from '@assets/images'
+import InternalLink from '@components/utils/internalLink/InternalLink'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
@@ -36,7 +37,10 @@ const Homepage: React.FC = () => {
           This is all about my dominance, where I pretend I am some crazy talented front end
           developer but really I just sit around listening to guitar music and watching my cat derp.
         </p>
-        <div className={style.externalLinks}>
+        <div className={style.internalLinksContainer}>
+          <InternalLink linkText="Projects" />
+        </div>
+        <div className={style.externalLinksContainer}>
           <a href="https://github.com/MBright90">
             <FontAwesomeIcon icon={faGithub} />
           </a>
