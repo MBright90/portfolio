@@ -39,6 +39,8 @@ const Homepage: React.FC = () => {
         </p>
         <div className={style.internalLinksContainer}>
           <InternalLink linkText="Projects" />
+          <InternalLink linkText="About Me" />
+          <InternalLink linkText="Contact" />
         </div>
         <div className={style.externalLinksContainer}>
           <a href="https://github.com/MBright90">
