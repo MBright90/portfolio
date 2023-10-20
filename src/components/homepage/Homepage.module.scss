@@ -36,6 +36,7 @@
 
     @media screen and (min-width: $breakpoint-small) {
         font-size: 70px;
+        margin-top: auto;
     }
 }
 
@@ -56,8 +57,18 @@
 }
 
 .internalLinksContainer {
+    align-items: center;
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px 0;
+    justify-content: center;
+
+    @media screen and (min-width: $breakpoint-small) {
+        flex-direction: row;
+        justify-content: space-between;
+        width: 70%;
+    }
 }
 
 .externalLinksContainer {
