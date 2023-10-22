@@ -14,7 +14,7 @@
     white-space: nowrap;
 
     ul {
-        animation: 15s marqueeScroll infinite linear;
+        animation: 8s marqueeScroll infinite linear;
         display: inline-flex;
         list-style: none;
         margin: 8px 0;
@@ -34,7 +34,7 @@
         width: calc(100vw - 40px);
 
         ul {
-            animation: 15s marqueeReverseScroll infinite linear;
+            animation: 8s marqueeReverseScroll infinite linear;
             transform: translateX(-100%);
         }
 
