@@ -38,9 +38,9 @@ const Homepage: React.FC = () => {
           developer but really I just sit around listening to guitar music and watching my cat derp.
         </p>
         <div className={style.internalLinksContainer}>
-          <InternalLink linkText="PROJECTS" />
-          <InternalLink linkText="ABOUT ME" />
-          <InternalLink linkText="CONTACT" />
+          <InternalLink linkText="PROJECTS" route="/" />
+          <InternalLink linkText="ABOUT ME" route="/" />
+          <InternalLink linkText="CONTACT" route="/" />
         </div>
         <div className={style.externalLinksContainer}>
           <a href="https://github.com/MBright90">
