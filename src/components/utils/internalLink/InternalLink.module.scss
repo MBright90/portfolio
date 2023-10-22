@@ -85,9 +85,11 @@
 
 .internalLink {
     align-items: center;
+    background-color: transparent;
     border: 3px solid $brand-yellow;
     border-radius: 50%;
     color: $brand-yellow;
+    cursor: pointer;
     display: flex;
     font-weight: bold;
     height: 150px;
@@ -115,7 +117,7 @@
         border-radius: 50%;
         height: 100%;
         transform-origin: top left;
-        transform: rotate(-90deg);
+        transform: translateX(-100px) rotate(-90deg);
         width: 100%;
         z-index: -1;
 
@@ -123,7 +125,7 @@
     }
 
     &:hover::before, &:focus::before {
-        transform: rotate(0deg);
+        transform: translateX(0) rotate(0deg);
     }
 
     @media screen and (min-width: $breakpoint-small) {
