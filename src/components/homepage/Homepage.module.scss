@@ -7,7 +7,7 @@
     justify-content: flex-start;
     padding: 20px;
     position: relative;
-    height: calc(100vh - 80px);
+    min-height: calc(100vh - 80px);
     width: 100vw;
     margin: 40px 0;
 
@@ -81,8 +81,9 @@
     a {
         cursor: pointer;
 
-        &:hover {
+        &:hover, &:focus {
             animation: icon-shake infinite .3s ease-in-out;
+            outline: none;
         }
 
         transition: transform .3s ease-in-out;
@@ -95,7 +96,9 @@
 // Marquee Functionality
 
 .marqueeWrapper {
-    height: 100vh;
+    min-height: 100vh;
+    top: 0;
+    bottom: 0;
     position: absolute;
     overflow: hidden;
     width: 100vw;
