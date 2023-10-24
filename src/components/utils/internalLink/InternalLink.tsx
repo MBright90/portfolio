@@ -1,6 +1,7 @@
 import type React from 'react'
 import { useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
+import useTransition from '@hooks/useTransition'
 
 import style from './InternalLink.module.scss'
 
@@ -12,11 +13,12 @@ interface InternalLinkInterface {
 const InternalLink: React.FC<InternalLinkInterface> = ({ linkText, route }) => {
   const navigate = useNavigate()
   const transitionOutRef = useRef<HTMLDivElement | null>(null)
+  const { setTransition } = useTransition()
 
   const followRoute = (): void => {
     transitionOutRef.current?.removeEventListener('animationend', followRoute)
+    setTransition()
     navigate(route)
-    transitionOutRef.current?.classList.remove(style.active)
   }
 
   const transitionToPage = (event: React.MouseEvent<HTMLButtonElement>): void => {
