@@ -1,0 +1,8 @@
+{
+    "name": "contact-page",
+    "version": "1.0.0",
+    "main": "ContactPage.tsx",
+    "dependencies": {
+        "react": "^18.2.0"
+    }
+}
