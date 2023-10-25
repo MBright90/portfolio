@@ -1,8 +1,0 @@
-{
-    "name": "use-transition",
-    "version": "1.0.0",
-    "main": "useTransition.ts",
-    "dependencies": {
-        "react": "^18.2.0"
-    }
-}
