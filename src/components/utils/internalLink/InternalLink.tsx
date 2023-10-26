@@ -1,6 +1,7 @@
 import type React from 'react'
-import { useRef } from 'react'
+import { useContext, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { transitionContext } from '@contexts/transitionContext/transitionContext'
 
 import style from './InternalLink.module.scss'
 
@@ -10,11 +11,13 @@ interface InternalLinkInterface {
 }
 
 const InternalLink: React.FC<InternalLinkInterface> = ({ linkText, route }) => {
+  const { setTransitionStatus } = useContext(transitionContext)
   const navigate = useNavigate()
   const transitionOutRef = useRef<HTMLDivElement | null>(null)
 
   const followRoute = (): void => {
     transitionOutRef.current?.removeEventListener('animationend', followRoute)
+    setTransitionStatus(true)
     navigate(route)
   }
 
