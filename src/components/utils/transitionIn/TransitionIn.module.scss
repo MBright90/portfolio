@@ -1,9 +1,22 @@
+@import '~@styles/_variables.scss';
+
 .transitionIn {
-    background-color: red;
-    bottom: 0;
-    position: absolute;
+    animation: remove-transition .5s 1;
+    background-color: $brand-yellow;
+    height: 100vh;
     left: 0;
-    right: 0;
+    position: absolute;
     top: 0;
+    width: 100vw;
     z-index: 10
+}
+
+@keyframes remove-transition {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-100vw);
+    }
 }
