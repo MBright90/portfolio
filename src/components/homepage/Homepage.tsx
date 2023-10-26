@@ -1,14 +1,23 @@
 import type React from 'react'
+import { useContext } from 'react'
 import { mainBg } from '@assets/images'
-import InternalLink from '@components/utils/internalLink/InternalLink'
-import { faGithub } from '@fortawesome/free-brands-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import ExternalLinks from '@components/utils/externalLinks/ExternalLink'
+import InternalLink from '@components/utils/internalLink'
+import TransitionIn from '@components/utils/transitionIn'
+import { transitionContext, type TransitionContextInterface } from '@contexts/transitionContext'
 
 import Marquee from './marquee/Marquee'
 
 import style from './Homepage.module.scss'
 
 const Homepage: React.FC = () => {
+  const { transitionActive } = useContext<TransitionContextInterface>(transitionContext)
+
+  let transition: React.ReactNode | null = null
+  if (transitionActive) {
+    transition = <TransitionIn />
+  }
+
   const itemsOne: string[] = [
     'A bit of a dick head',
     'Ambitious and dedicated guitarist who looks Korean',
@@ -20,6 +29,7 @@ const Homepage: React.FC = () => {
 
   return (
     <main>
+      {transition}
       <div className={style.marqueeWrapper}>
         <Marquee position="top" itemArr={itemsOne} />
         <Marquee position="right" itemArr={itemsTwo} />
@@ -40,13 +50,9 @@ const Homepage: React.FC = () => {
         <div className={style.internalLinksContainer}>
           <InternalLink linkText="PROJECTS" route="/" />
           <InternalLink linkText="ABOUT ME" route="/" />
-          <InternalLink linkText="CONTACT" route="/" />
+          <InternalLink linkText="CONTACT" route="/contact" />
         </div>
-        <div className={style.externalLinksContainer}>
-          <a href="https://github.com/MBright90">
-            <FontAwesomeIcon icon={faGithub} />
-          </a>
-        </div>
+        <ExternalLinks />
       </div>
     </main>
   )
