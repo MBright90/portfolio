@@ -4,14 +4,14 @@ import { mainBg } from '@assets/images'
 import ExternalLinks from '@components/utils/externalLinks/ExternalLink'
 import InternalLink from '@components/utils/internalLink'
 import TransitionIn from '@components/utils/transitionIn'
-import { transitionContext, type TransitionContextInterface } from '@contexts/transitionContext'
+import { transitionContext } from '@contexts/transitionContext'
 
 import Marquee from './marquee/Marquee'
 
 import style from './Homepage.module.scss'
 
 const Homepage: React.FC = () => {
-  const { transitionActive } = useContext<TransitionContextInterface>(transitionContext)
+  const { transitionActive } = useContext(transitionContext)
 
   let transition: React.ReactNode | null = null
   if (transitionActive) {
