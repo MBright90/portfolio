@@ -1,24 +1,22 @@
 import type React from 'react'
-import { createPortal } from 'react-dom'
+import { useContext } from 'react'
+import { mainBg } from '@assets/images'
 import TransitionIn from '@components/utils/transitionIn'
-import useTransition, { type TransitionHookReturnType } from '@hooks/useTransition'
+import { transitionContext } from '@contexts/transitionContext'
 
 import style from './ContactPage.module.scss'
 
 const ContactPage: React.FC = () => {
-  const { transitionBool, removeTransition }: TransitionHookReturnType = useTransition()
+  const { transitionActive } = useContext(transitionContext)
 
-  const transitionIn = (): React.ReactNode | null => {
-    if (transitionBool as boolean) {
-      removeTransition()
-      return createPortal(<TransitionIn />, document.querySelector('#root')!)
-    }
-    return null
+  let transition: React.ReactNode | null = null
+  if (transitionActive) {
+    transition = <TransitionIn />
   }
 
   return (
-    <main className={style.contactPageWrapper}>
-      {transitionIn()}
+    <main className={style.contactPageWrapper} style={{ backgroundImage: `url("${mainBg}")` }}>
+      {transition}
       <form></form>
     </main>
   )
