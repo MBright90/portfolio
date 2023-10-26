@@ -1,0 +1,8 @@
+{
+    "name": "external-links",
+    "version": "1.0.0",
+    "main": "ExternalLinks.tsx",
+    "dependencies": {
+        "react": "^18.2.0"
+    }
+}
