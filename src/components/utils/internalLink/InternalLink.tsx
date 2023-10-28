@@ -21,7 +21,7 @@ const InternalLink: React.FC<InternalLinkInterface> = ({ linkText, route }) => {
     navigate(route)
   }
 
-  const transitionToPage = (event: React.MouseEvent<HTMLButtonElement>): void => {
+  const transitionToPage = (): void => {
     transitionOutRef.current?.addEventListener('animationend', followRoute)
     transitionOutRef.current?.classList.add(style.active)
   }
