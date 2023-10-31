@@ -1,6 +1,5 @@
 import type React from 'react'
 import { useContext } from 'react'
-import { mainBg } from '@assets/images'
 import Header from '@components/header'
 import TransitionIn from '@components/utils/transitionIn'
 import { transitionContext } from '@contexts/transitionContext'
@@ -16,11 +15,13 @@ const ContactPage: React.FC = () => {
   }
 
   return (
-    <main className={style.contactPageWrapper} style={{ backgroundImage: `url("${mainBg}")` }}>
-      {transition}
+    <>
       <Header />
-      <form></form>
-    </main>
+      <main className={style.contactPageWrapper}>
+        {transition}
+        <form></form>
+      </main>
+    </>
   )
 }
 
