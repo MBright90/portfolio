@@ -1,6 +1,5 @@
 import type React from 'react'
 import { useContext } from 'react'
-import { mainBg } from '@assets/images'
 import ExternalLinks from '@components/utils/externalLinks/ExternalLink'
 import InternalLink from '@components/utils/internalLink'
 import TransitionIn from '@components/utils/transitionIn'
@@ -36,7 +35,7 @@ const Homepage: React.FC = () => {
         <Marquee position="bottom" itemArr={itemsOne} />
         <Marquee position="left" itemArr={itemsTwo} />
       </div>
-      <div className={style.homepageWrapper} style={{ backgroundImage: `url("${mainBg}")` }}>
+      <div className={style.homepageWrapper}>
         <h1 className={style.homepageTitle}>
           <span className={style.hi} aria-hidden>
             hi,
