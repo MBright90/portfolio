@@ -69,7 +69,7 @@
 
     &.active {
         display: inline-block;
-        animation: transition-out 1s 1;
+        animation: transition-out .7s 1 ease-in;
         transform: scale(30);
     }
 }
