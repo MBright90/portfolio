@@ -6,11 +6,12 @@ import { transitionContext } from '@contexts/transitionContext/transitionContext
 import style from './HeaderLink.module.scss'
 
 interface HeaderLinkInterface {
+  disabled: '/' | '/projects' | 'about-me' | '/contact'
   linkText: string
   route: string
 }
 
-const HeaderLink: React.FC<HeaderLinkInterface> = ({ route, linkText }) => {
+const HeaderLink: React.FC<HeaderLinkInterface> = ({ route, linkText, disabled = false }) => {
   const { setTransitionStatus } = useContext(transitionContext)
   const navigate = useNavigate()
   const transitionOutRef = useRef<HTMLDivElement | null>(null)
@@ -28,7 +29,7 @@ const HeaderLink: React.FC<HeaderLinkInterface> = ({ route, linkText }) => {
 
   return (
     <div className={style.linkWrapper}>
-      <button className={style.headerLink} onClick={transitionToPage}>
+      <button className={style.headerLink} onClick={transitionToPage} disabled={disabled === route}>
         {linkText}
       </button>
       <div className={style.transitionOut} ref={transitionOutRef}></div>

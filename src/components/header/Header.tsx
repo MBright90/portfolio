@@ -4,13 +4,17 @@ import HeaderLink from './headerLink/HeaderLink'
 
 import style from './Header.module.scss'
 
-const Header: React.FC = () => {
+interface HeaderProps {
+  disabled: '/' | '/projects' | 'about-me' | '/contact'
+}
+
+const Header: React.FC<HeaderProps> = ({ disabled }) => {
   return (
     <header className={style.header}>
-      <HeaderLink linkText={'HOME'} route="/" />
-      <HeaderLink linkText={'PROJECTS'} route="/" />
-      <HeaderLink linkText={'ABOUT ME'} route="/" />
-      <HeaderLink linkText={'CONTACT'} route="/contact" />
+      <HeaderLink linkText={'HOME'} route="/" disabled={disabled} />
+      <HeaderLink linkText={'PROJECTS'} route="/" disabled={disabled} />
+      <HeaderLink linkText={'ABOUT ME'} route="/" disabled={disabled} />
+      <HeaderLink linkText={'CONTACT'} route="/contact" disabled={disabled} />
     </header>
   )
 }
