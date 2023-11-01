@@ -23,7 +23,7 @@ const HeaderLink: React.FC<HeaderLinkInterface> = ({ route, linkText }) => {
 
   const transitionToPage = (): void => {
     transitionOutRef.current?.addEventListener('animationend', followRoute)
-    transitionOutRef.current?.classList.add('active')
+    transitionOutRef.current?.classList.add(style.active)
   }
 
   return (
