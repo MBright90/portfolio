@@ -4,6 +4,7 @@
     border-bottom: 2px solid $brand-yellow;
     height: 100%;
     padding: 10px 10px;
+    position: relative;
     width: 20%;
 }
 
@@ -58,25 +59,25 @@
     display: none;
     position: absolute;
     overflow: hidden;
-    top: 50px;
-    bottom: 50px;
-    left: 0;
-    right: 0;
+    top: 15px;
+    bottom: 15px;
+    left: 15px;
+    right: 15px;
     z-index: 10;
 
     &.active {
         display: inline-block;
-        animation: transition-out 1s 1;
+        animation: transition-out .7s 1 ease-in;
         transform: scale(30);
     }
 }
 
 @keyframes transition-out {
     0% {
-        transform: rotate(0deg);
+        transform: scale(0);
     }
 
     100% {
-        transform: rotate(45deg);
+        transform: scale(100);
     }
 }
