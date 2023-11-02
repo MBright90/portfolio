@@ -1,6 +1,7 @@
 import type React from 'react'
 import { useContext } from 'react'
 import Header from '@components/header'
+import ExternalLinks from '@components/utils/externalLinks/ExternalLink'
 import TransitionIn from '@components/utils/transitionIn'
 import { transitionContext } from '@contexts/transitionContext'
 
@@ -16,11 +17,12 @@ const ContactPage: React.FC = () => {
 
   return (
     <>
-      <Header />
+      <Header disabled="/contact" />
       <main className={style.contactPageWrapper}>
         {transition}
         <form></form>
       </main>
+      <ExternalLinks />
     </>
   )
 }
