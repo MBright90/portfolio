@@ -47,8 +47,8 @@ const Homepage: React.FC = () => {
           developer but really I just sit around listening to guitar music and watching my cat derp.
         </p>
         <div className={style.internalLinksContainer}>
-          <InternalLink linkText="PROJECTS" route="/" />
-          <InternalLink linkText="ABOUT ME" route="/" />
+          <InternalLink linkText="PROJECTS" route="/projects" />
+          <InternalLink linkText="ABOUT ME" route="/about-me" />
           <InternalLink linkText="CONTACT" route="/contact" />
         </div>
         <ExternalLinks />

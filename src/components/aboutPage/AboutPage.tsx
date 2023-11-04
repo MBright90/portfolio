@@ -7,7 +7,7 @@ import { transitionContext } from '@contexts/transitionContext/transitionContext
 
 import style from './AboutPage.module.scss'
 
-const ProjectsPage: React.FC = () => {
+const AboutPage: React.FC = () => {
   const { transitionActive } = useContext(transitionContext)
 
   let transition: React.ReactNode | null = null
@@ -17,7 +17,7 @@ const ProjectsPage: React.FC = () => {
 
   return (
     <>
-      <Header disabled="/projects" />
+      <Header disabled="/about-me" />
       <main className={style.aboutPageWrapper}>
         {transition}
         <div>projects</div>
@@ -27,4 +27,4 @@ const ProjectsPage: React.FC = () => {
   )
 }
 
-export default ProjectsPage
+export default AboutPage

@@ -7,7 +7,7 @@ import style from './InternalLink.module.scss'
 
 interface InternalLinkInterface {
   linkText: string
-  route: string
+  route: '/' | '/contact' | '/about-me' | '/projects'
 }
 
 const InternalLink: React.FC<InternalLinkInterface> = ({ linkText, route }) => {

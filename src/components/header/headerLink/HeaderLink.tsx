@@ -6,7 +6,7 @@ import { transitionContext } from '@contexts/transitionContext/transitionContext
 import style from './HeaderLink.module.scss'
 
 interface HeaderLinkInterface {
-  disabled: '/' | '/projects' | 'about-me' | '/contact'
+  disabled: '/' | '/projects' | '/about-me' | '/contact'
   linkText: string
   route: string
 }
