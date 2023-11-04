@@ -1,0 +1,9 @@
+{
+    "name": "projects-page",
+    "version": "1.0.0",
+    "main": "ProjectsPage.tsx",
+    "dependencies": {
+        "react": "^18.2.0",
+        "react-dom": "^6.11.2"
+    }
+}
