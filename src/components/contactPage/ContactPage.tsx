@@ -5,6 +5,8 @@ import ExternalLinks from '@components/utils/externalLinks/ExternalLink'
 import TransitionIn from '@components/utils/transitionIn'
 import { transitionContext } from '@contexts/transitionContext'
 
+import ContactForm from './contactForm/ContactForm'
+
 import style from './ContactPage.module.scss'
 
 const ContactPage: React.FC = () => {
@@ -20,7 +22,7 @@ const ContactPage: React.FC = () => {
       <Header disabled="/contact" />
       <main className={style.contactPageWrapper}>
         {transition}
-        <form></form>
+        <ContactForm />
       </main>
       <ExternalLinks />
     </>
