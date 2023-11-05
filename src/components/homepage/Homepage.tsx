@@ -37,7 +37,7 @@ const Homepage: React.FC = () => {
       </div>
       <div className={style.homepageWrapper}>
         <h1 className={style.homepageTitle}>
-          <span className={style.hi} aria-hidden>
+          <span className={style.titleTag} aria-hidden>
             hi,
           </span>
           <span style={{ whiteSpace: 'nowrap' }}> I&apos;m Michael</span>
