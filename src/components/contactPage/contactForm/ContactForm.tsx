@@ -1,21 +1,39 @@
 import type React from 'react'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import style from './ContactForm.module.scss'
 
 const ContactForm: React.FC = () => {
-  const [senderInputValue, setSenderInputValue] = useState<string>('')
+  const [emailInputValue, setEmailInputValue] = useState<string>('')
+  const [emailValidity, setEmailValidity] = useState<boolean>(false)
+
   const [messageInputValue, setMessageInputValue] = useState<string>('')
+  const [messageValidity, setMessageValidity] = useState<boolean>(false)
+
+  useEffect(() => {}, [])
+
+  const validateEmail = (emailStr: string): boolean => {
+    const emailRegEx: RegExp = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/
+    return !!emailRegEx.test(emailStr)
+  }
+
+  const validateMessage = (messageStr: string): boolean => {
+    const messageRegex = /^[\w-.]{5}/
+    return !!messageRegex.test(messageStr)
+  }
 
   const handleSenderInputChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
-    setSenderInputValue(event.target.value)
+    setEmailValidity(validateEmail(event.target.value))
+    setEmailInputValue(event.target.value)
   }
 
   const handleMessageInputChange = (event: React.ChangeEvent<HTMLTextAreaElement>): void => {
+    setMessageValidity(validateMessage(event.target.value))
     setMessageInputValue(event.target.value)
   }
 
-  const validateInput = (): boolean => {
+  const validateInput = (event: React.MouseEvent<HTMLButtonElement>): boolean => {
+    event.preventDefault()
     return true
   }
 
@@ -26,9 +44,9 @@ const ContactForm: React.FC = () => {
         <input
           id="sender-input"
           name="sender-input"
-          className={style.formInput}
+          className={`${style.formInput} ${emailValidity ? null : style.invalidInput}`}
           type="text"
-          value={senderInputValue}
+          value={emailInputValue}
           onChange={handleSenderInputChange}
         />
       </div>
@@ -37,13 +55,13 @@ const ContactForm: React.FC = () => {
         <textarea
           id="message-input"
           name="message-input"
-          className={style.formInput}
+          className={`${style.formInput} ${messageValidity ? null : style.invalidInput}`}
           value={messageInputValue}
           onChange={handleMessageInputChange}
         />
       </div>
 
-      <button onClick={validateInput}>Send</button>
+      <button onClick={validateInput}>SEND</button>
     </form>
   )
 }
