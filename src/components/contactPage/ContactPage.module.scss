@@ -1,4 +1,29 @@
+@import '~@styles/_variables.scss';
+@import '~@styles/_fonts.scss';
+
 .contactPageWrapper {
+    padding: 20px 10%;
     min-height: calc(100vh - 80px);
     width: 100vw;
+}
+
+.contactTitle {
+    color: #fff;
+    font-family: something-shine;
+    font-size: 48px;
+    padding: 0 10% 20px 10%;
+
+    span {
+        letter-spacing: 5px;
+    }
+
+    span.titleTag {
+        color: $brand-yellow;
+        display: inline-block;
+        font-size: 32px;
+    }
+
+    @media screen and (min-width: $breakpoint-small) {
+        font-size: 70px;
+    }
 }
