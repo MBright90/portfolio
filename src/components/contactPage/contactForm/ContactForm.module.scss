@@ -1,0 +1,81 @@
+@import '~@styles/_variables.scss';
+
+.formContainer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.inputContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 10px 0;
+    width: 80%;
+
+    label {
+        color: $brand-yellow;
+    }
+}
+
+.formInput {
+    font-size: 18px;
+    padding: 5px;
+    resize: vertical;
+    width: 100%;
+}
+textarea {
+    height: 300px;
+}
+
+button {
+    align-items: center;
+    background-color: transparent;
+    border: 3px solid #fff;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    font-size: 18px;
+    height: 100%;
+    justify-content: center;
+    letter-spacing: 2px;
+    // overflow: hidden;
+    padding: 10px;
+    position: relative;
+    width: fit-content;
+    z-index: 1;
+
+    transition: color 0.3s, border-color 0.3s;
+    -webkit-transition: color 0.3s, border-color 0.3s;
+
+    &:hover {
+        color: #acacac;
+    }
+
+    &:not(:disabled) {
+        &:hover, &:focus {
+            color: #2a2a2a;
+            outline: none;
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: $brand-yellow;
+            height: 100%;
+            transform-origin: top left;
+            transform: translateX(-60px) rotate(-45deg);
+            width: 150%;
+            z-index: -1;
+    
+            transition: transform 0.3s;
+            -webkit-transition: transform 0.3s;
+        }
+    
+        &:hover::before, &:focus::before {
+            transform: translateX(-60px) rotate(0deg);
+        }
+    }
+}
