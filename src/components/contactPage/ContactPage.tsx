@@ -22,6 +22,15 @@ const ContactPage: React.FC = () => {
       <Header disabled="/contact" />
       <main className={style.contactPageWrapper}>
         {transition}
+        <h1 className={style.contactTitle}>
+          <span className={style.titleTag} aria-hidden>
+            why not,
+          </span>
+          <span style={{ whiteSpace: 'nowrap' }}> Contact Me</span>
+          <span className={style.titleTag} aria-hidden>
+            ?
+          </span>
+        </h1>
         <ContactForm />
       </main>
       <ExternalLinks />
