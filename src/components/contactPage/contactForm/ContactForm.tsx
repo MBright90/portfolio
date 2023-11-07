@@ -22,7 +22,7 @@ const ContactForm: React.FC = () => {
   return (
     <form className={style.formContainer}>
       <div className={style.inputContainer}>
-        <label htmlFor="sender-input"></label>
+        <label htmlFor="sender-input">Email</label>
         <input
           id="sender-input"
           name="sender-input"
@@ -32,8 +32,8 @@ const ContactForm: React.FC = () => {
           onChange={handleSenderInputChange}
         />
       </div>
-      <div>
-        <label htmlFor="message-input"></label>
+      <div className={style.inputContainer}>
+        <label htmlFor="message-input">Message</label>
         <textarea
           id="message-input"
           name="message-input"
