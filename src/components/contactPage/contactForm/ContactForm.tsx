@@ -1,22 +1,14 @@
 import type React from 'react'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 
 import style from './ContactForm.module.scss'
 
 const ContactForm: React.FC = () => {
   const [emailInputValue, setEmailInputValue] = useState<string>('')
-  const [emailValidity, setEmailValidity] = useState<boolean>(false)
+  const [emailValidity, setEmailValidity] = useState<boolean>(true)
 
   const [messageInputValue, setMessageInputValue] = useState<string>('')
-  const [messageValidity, setMessageValidity] = useState<boolean>(false)
-
-  useEffect(() => {
-    console.log(emailValidity)
-  }, [emailValidity])
-
-  useEffect(() => {
-    console.log(messageValidity)
-  }, [messageValidity])
+  const [messageValidity, setMessageValidity] = useState<boolean>(true)
 
   const validateEmail = (emailStr: string): boolean => {
     const emailRegEx: RegExp = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/
@@ -24,8 +16,7 @@ const ContactForm: React.FC = () => {
   }
 
   const validateMessage = (messageStr: string): boolean => {
-    const messageRegex = /^[\w-.]{5}/
-    return !!messageRegex.test(messageStr)
+    return messageStr.length > 10
   }
 
   const handleSenderInputChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
