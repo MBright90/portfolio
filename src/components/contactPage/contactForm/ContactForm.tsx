@@ -10,7 +10,13 @@ const ContactForm: React.FC = () => {
   const [messageInputValue, setMessageInputValue] = useState<string>('')
   const [messageValidity, setMessageValidity] = useState<boolean>(false)
 
-  useEffect(() => {}, [])
+  useEffect(() => {
+    console.log(emailValidity)
+  }, [emailValidity])
+
+  useEffect(() => {
+    console.log(messageValidity)
+  }, [messageValidity])
 
   const validateEmail = (emailStr: string): boolean => {
     const emailRegEx: RegExp = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/
@@ -61,7 +67,9 @@ const ContactForm: React.FC = () => {
         />
       </div>
 
-      <button onClick={validateInput}>SEND</button>
+      <button className={style.formButton} onClick={validateInput}>
+        SEND
+      </button>
     </form>
   )
 }
