@@ -19,10 +19,15 @@
 }
 
 .formInput {
+    border: none;
     font-size: 18px;
     padding: 5px;
     resize: vertical;
     width: 100%;
+
+    &.invalidInput {
+        background-color: rgb(243, 137, 137);
+    }
 
     &:focus {
         outline: 2px solid $brand-yellow;
