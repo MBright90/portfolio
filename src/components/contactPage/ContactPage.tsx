@@ -24,11 +24,14 @@ const ContactPage: React.FC = () => {
         {transition}
         <h1 className={style.contactTitle}>
           <span className={style.titleTag} aria-hidden>
-            why not,
+            why not
           </span>
-          <span style={{ whiteSpace: 'nowrap' }}> Contact Me</span>
-          <span className={style.titleTag} aria-hidden>
-            ?
+          <span style={{ whiteSpace: 'nowrap' }}>
+            {' '}
+            Contact Me
+            <span className={style.titleTag} aria-hidden>
+              ?
+            </span>
           </span>
         </h1>
         <ContactForm />
